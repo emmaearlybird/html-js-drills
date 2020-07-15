@@ -22,11 +22,41 @@ function addName() {
   // - https://www.w3schools.com/jsref/prop_node_innertext.asp
 
   let nameElement = document.querySelector('#name');
-  nameElement.innerText = 'See script.js!';
+  nameElement.innerText = 'still Dirk';
 }
 
-function addFavoriteThings() {
+/*Return to*/function addFavoriteThings() {
   console.log('Called addFavoriteThings()');
+
+  let nameElement = document.querySelector('#favthings');
+  nameElement.textContent = 'Square-rim glasses';
+  nameElement.textContent = 'The Aeneid';
+  nameElement.textContent = 'White bread';
+
+  /*let div = document.createElement('div');
+    //li.textContent = "Cars";
+    div.id = 'favthings';
+    //div.innerHTML = '<p>Cars</p>';
+    let text = document.createTextNode('CreateElement');
+    div.appendChild(text);
+    document.body.appendChild(div);*/
+
+    /*var favoThings = ["Protein powder","Freud","White bread"];
+    document.getElementById("favthings").innerHTML = favoThings;
+
+    function addToList() {
+      favoThings.push("i"); This worked, but I don't think it's the purpose*/
+      //document.getElementbyId("favthings").innerHTML = favoThings;}
+
+    /*let li = document.createElement('li');
+    li.textContent = 'Products';
+    menu.appendChild(li);
+
+    li = document.createElement('li');
+    li.textContent = 'About us';
+
+    const menu = document.querySelector('#menu');
+    menu.appendChild;*/
 
   // 1. Get a reference to <ul id="favthings">
   // 2. Create a few list items representing your favorite things
@@ -39,17 +69,27 @@ function addFavoriteThings() {
 }
 
 function replaceImage() {
-  console.log('Called replaceImage()');
+    console.log('Called replaceImage()');
+    var photo1 = document.getElementById("picture");
+    photo1.removeAttribute("src");
+    photo1.setAttribute("src", "download.jpg")
 
-  // Change the puppy picture to a picture of your choosing
-
+    //document.getElementbyId("myImg").src = "download.jpg";
   // See:
   // - https://www.tutorialrepublic.com/javascript-tutorial/javascript-dom-get-set-attributes.php
   // - https://www.w3schools.com/jsref/met_element_setattribute.asp
 }
 
-function changeCodeStatus() {
+/*Return to*/function changeCodeStatus() {
   console.log('Called changeCodeStatus()');
+  let codeStat = document.getElementById("codestatus");
+  codeStat.remove();
+  var meme1 = document.createElement("IMG");
+  meme1.setAttribute("src","9e7da1c68e857f266a23d7d1a92d0bb0.jpg");
+  meme1.setAttribute("width", "304");
+  meme1.setAttribute("height", "228");
+  meme1.setAttribute("alt", "You Can Do It! meme");
+  document.body.appendChild(meme1); //not body, but what am I appending this to?
 
   // 1. Get a reference to <div id="codestatus">
   // 2. Create image element containing a sweet ol' meme
@@ -59,7 +99,7 @@ function changeCodeStatus() {
 // Get a reference to the button w/ id="show-info-button"
 let showInfoButton = document.querySelector('#show-info-button');
 
-// Do something when showInfoButton is clicke
+// Do something when showInfoButton is clicked
 showInfoButton.addEventListener('click', function() {
   console.log('Clicked "Show Info" button');
 
