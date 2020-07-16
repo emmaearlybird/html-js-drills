@@ -15,7 +15,20 @@
  */
 
 function addName() {
-  console.log('addName() ran');
+  let firstname = document.querySelector("#firstname");
+  let lastname = document.querySelector("#lastname");
+  let fname = document.querySelector("#fname");
+  let lname = document.querySelector("#lname");
+  firstname.innerHTML = fname.value;
+  lastname.innerHTML = lname.value;
+  let cars = document.querySelector("#cars");
+  let chosencar = document.querySelector("#chosencar");
+  chosencar.innerHTML = cars.value;
+  let console-log-button = document.querySelector("#console-log-button");
+  //let isHuman = document.querySelector("humancheck").check;
+  //let isCoder = document.querySelector("#codercheck");
+  //isHuman = innerHTML = ("#humancheck");
+  //isCoder = document = ("#codercheck");
 
   // See:
   // - https://www.digitalocean.com/community/tutorials/js-innertext-and-innerhtml
@@ -30,8 +43,8 @@ function addName() {
 
   let nameElement = document.querySelector('#favthings');
   nameElement.textContent = 'Square-rim glasses';
-  nameElement.textContent = 'The Aeneid';
-  nameElement.textContent = 'White bread';
+  nameElement.textContent += ', The Aeneid';
+  nameElement.textContent += ', White bread';
 
   /*let div = document.createElement('div');
     //li.textContent = "Cars";
@@ -43,7 +56,6 @@ function addName() {
 
     /*var favoThings = ["Protein powder","Freud","White bread"];
     document.getElementById("favthings").innerHTML = favoThings;
-
     function addToList() {
       favoThings.push("i"); This worked, but I don't think it's the purpose*/
       //document.getElementbyId("favthings").innerHTML = favoThings;}
@@ -51,10 +63,8 @@ function addName() {
     /*let li = document.createElement('li');
     li.textContent = 'Products';
     menu.appendChild(li);
-
     li = document.createElement('li');
     li.textContent = 'About us';
-
     const menu = document.querySelector('#menu');
     menu.appendChild;*/
 
@@ -100,7 +110,7 @@ function replaceImage() {
 let showInfoButton = document.querySelector('#show-info-button');
 
 // Do something when showInfoButton is clicked
-showInfoButton.addEventListener('click', function() {
+showInfoButton.addEventListener('click', function(event) {
   console.log('Clicked "Show Info" button');
 
   // Implement addName, addFavoriteThings, replaceImage, changeCodeStatus above
@@ -109,6 +119,7 @@ showInfoButton.addEventListener('click', function() {
   addFavoriteThings();
   replaceImage();
   changeCodeStatus();
+
 });
 
 /**********************************
@@ -122,13 +133,13 @@ showInfoButton.addEventListener('click', function() {
  */
 
 // Get a reference to form w/ id="information-form"
-let informationForm = document.querySelector('#information-form');
+let informationForm = document.querySelector("#information-form");
 
 // Do something when form is submitted
-informationForm.addEventListener('submit', function(event) {
+informationForm.addEventListener('"console-log-button"', function(event) {
   event.preventDefault(); // You will want this here. Remove it and see what changes.
 
-  console.log('Form submitted');
+  console.log("#information-form");
 
   // Your job:
   //   1. Get information typed into the form
@@ -151,14 +162,14 @@ informationForm.addEventListener('submit', function(event) {
 // then log something to the console
 
 // Fill in ________ to get a reference to the correct button on the page
-let consoleLogButton = document.querySelector('#________');
+let consoleLogButton = document.querySelector("#console-log-button");
 
 // Log something when that button is clicked
 consoleLogButton.addEventListener('click', function() {
   console.log('Change this text if you want!');
 });
 
-let makeBlueButton = document.querySelector('#________');
+let makeBlueButton = document.querySelector('#colorText');
 makeBlueButton.addEventListener('click', function() {
   // Your job:
   //  1. When a user clicks "Change the text to the right blue"
@@ -167,7 +178,7 @@ makeBlueButton.addEventListener('click', function() {
 
 // Adding an event listener to document means the "keydown" event
 // can happen anywhere on the page and we'll respond.
-document.addeventListener('keydown', function() {
+document.addEventListener('keydown', function() {
   // This is called whenever a user pressed any key.
 
   // Your job:
@@ -214,7 +225,15 @@ document.addeventListener('keydown', function() {
  */
 
 // Your code goes here
+function myFunction() {
+  let count = 0;
+  setInterval(function(){
+    let spn = document.querySelector("#seconds");
+  spn.innerHTML = (++count);
+  }, 1000);
 
+  }
+  myFunction();
 /****************************************
  * Section 6 - Your own section!        *
  ****************************************
