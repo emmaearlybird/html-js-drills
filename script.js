@@ -1,38 +1,10 @@
-// Helpful Resources:
-// https://www.w3schools.com/js/js_htmldom.asp
-// https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector
-
 /*****************************
  * Section 1 - Personal Info *
  *****************************
- *
- * Description:
- *   Change the code below to display some (static) information
- *   when a user clicks the "Show Info" button.
- *
- * Resources:
- *   (See below for drill-specific resources)
  */
 
 function addName() {
-  let firstname = document.querySelector("#firstname");
-  let lastname = document.querySelector("#lastname");
-  let fname = document.querySelector("#fname");
-  let lname = document.querySelector("#lname");
-  firstname.innerHTML = fname.value;
-  lastname.innerHTML = lname.value;
-  let cars = document.querySelector("#cars");
-  let chosencar = document.querySelector("#chosencar");
-  chosencar.innerHTML = cars.value;
-  let console-log-button = document.querySelector("#console-log-button");
-  //let isHuman = document.querySelector("humancheck").check;
-  //let isCoder = document.querySelector("#codercheck");
-  //isHuman = innerHTML = ("#humancheck");
-  //isCoder = document = ("#codercheck");
-
-  // See:
-  // - https://www.digitalocean.com/community/tutorials/js-innertext-and-innerhtml
-  // - https://www.w3schools.com/jsref/prop_node_innertext.asp
+  console.log('addName() ran');
 
   let nameElement = document.querySelector('#name');
   nameElement.innerText = 'still Dirk';
@@ -43,30 +15,8 @@ function addName() {
 
   let nameElement = document.querySelector('#favthings');
   nameElement.textContent = 'Square-rim glasses';
-  nameElement.textContent += ', The Aeneid';
-  nameElement.textContent += ', White bread';
-
-  /*let div = document.createElement('div');
-    //li.textContent = "Cars";
-    div.id = 'favthings';
-    //div.innerHTML = '<p>Cars</p>';
-    let text = document.createTextNode('CreateElement');
-    div.appendChild(text);
-    document.body.appendChild(div);*/
-
-    /*var favoThings = ["Protein powder","Freud","White bread"];
-    document.getElementById("favthings").innerHTML = favoThings;
-    function addToList() {
-      favoThings.push("i"); This worked, but I don't think it's the purpose*/
-      //document.getElementbyId("favthings").innerHTML = favoThings;}
-
-    /*let li = document.createElement('li');
-    li.textContent = 'Products';
-    menu.appendChild(li);
-    li = document.createElement('li');
-    li.textContent = 'About us';
-    const menu = document.querySelector('#menu');
-    menu.appendChild;*/
+  nameElement.textContent = 'The Aeneid';
+  nameElement.textContent = 'White bread';
 
   // 1. Get a reference to <ul id="favthings">
   // 2. Create a few list items representing your favorite things
@@ -110,7 +60,7 @@ function replaceImage() {
 let showInfoButton = document.querySelector('#show-info-button');
 
 // Do something when showInfoButton is clicked
-showInfoButton.addEventListener('click', function(event) {
+showInfoButton.addEventListener('click', function() {
   console.log('Clicked "Show Info" button');
 
   // Implement addName, addFavoriteThings, replaceImage, changeCodeStatus above
@@ -119,7 +69,6 @@ showInfoButton.addEventListener('click', function(event) {
   addFavoriteThings();
   replaceImage();
   changeCodeStatus();
-
 });
 
 /**********************************
@@ -133,13 +82,23 @@ showInfoButton.addEventListener('click', function(event) {
  */
 
 // Get a reference to form w/ id="information-form"
-let informationForm = document.querySelector("#information-form");
+let informationForm = document.querySelector('#information-form');
 
 // Do something when form is submitted
-informationForm.addEventListener('"console-log-button"', function(event) {
+/*RETURN TO THIS */informationForm.addEventListener('submit', function(event) {
+  var formInfo1 = document.getElementById("information-form"); //gathers info form HTML form
+  var name1 = formInfo1.elements["fname"].value; // value = name1
+  document.getElementbyId().innerHTML = name1;
+
+  //document.getElementById("demo").innerHTML = name1;
+
+  //append to end of label? I DON'T UNDERSTAND
+  console.log(name1);
+
+  //label.appendChild(name);
   event.preventDefault(); // You will want this here. Remove it and see what changes.
 
-  console.log("#information-form");
+  console.log('Form submitted');
 
   // Your job:
   //   1. Get information typed into the form
@@ -161,15 +120,15 @@ informationForm.addEventListener('"console-log-button"', function(event) {
 // When a user clicks "Click me to log something to the console"
 // then log something to the console
 
-// Fill in ________ to get a reference to the correct button on the page
-let consoleLogButton = document.querySelector("#console-log-button");
+// Fill in ________ to get a reference to the correct button on the page WHAT DOES THIS EVEN MEAN?
+let consoleLogButton = document.querySelector('#________');
 
 // Log something when that button is clicked
-consoleLogButton.addEventListener('click', function() {
+/*consoleLogButton.addEventListener('click', function() {
   console.log('Change this text if you want!');
-});
+});*/
 
-let makeBlueButton = document.querySelector('#colorText');
+let makeBlueButton = document.querySelector('#________');
 makeBlueButton.addEventListener('click', function() {
   // Your job:
   //  1. When a user clicks "Change the text to the right blue"
@@ -178,7 +137,7 @@ makeBlueButton.addEventListener('click', function() {
 
 // Adding an event listener to document means the "keydown" event
 // can happen anywhere on the page and we'll respond.
-document.addEventListener('keydown', function() {
+document.addeventListener('keydown', function() {
   // This is called whenever a user pressed any key.
 
   // Your job:
@@ -225,15 +184,7 @@ document.addEventListener('keydown', function() {
  */
 
 // Your code goes here
-function myFunction() {
-  let count = 0;
-  setInterval(function(){
-    let spn = document.querySelector("#seconds");
-  spn.innerHTML = (++count);
-  }, 1000);
 
-  }
-  myFunction();
 /****************************************
  * Section 6 - Your own section!        *
  ****************************************
