@@ -2,15 +2,28 @@
  * Section 1 - Personal Info *
  *****************************
  */
-
 function addName() {
-  console.log('addName() ran');
-
+  console.log('Called addName()');
   let nameElement = document.querySelector('#name');
   nameElement.innerText = 'still Dirk';
 }
 
-/*Return to*/function addFavoriteThings() {
+function replaceImage() {
+  console.log('Called replaceImage()');
+  var photo1 = document.getElementById("picture");
+  photo1.removeAttribute("src");
+  photo1.setAttribute("src", "download.jpg")
+}
+
+function changeCodeStatus() {
+  console.log('Called changeCodeStatus()');
+  let codeStat = document.getElementById("codestatus");
+  codeStat.innerHTML = "<img src='https://i.pinimg.com/originals/4d/7e/e3/4d7ee3fc125a8e5423c16cec50a2a6eb.png' />"
+  codeStat.resize(50, 50);
+  codeStat.setAttribute("alt", "You Can Do It! meme");
+}
+
+/*return to this */function addFavoriteThings() {
   console.log('Called addFavoriteThings()');
 
   let nameElement = document.querySelector('#favthings');
@@ -26,34 +39,6 @@ function addName() {
   //   - https://htmldog.com/guides/javascript/advanced/creatingelements/
   //   - https://www.javascripttutorial.net/javascript-dom/javascript-createelement/
   //   - https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement
-}
-
-function replaceImage() {
-    console.log('Called replaceImage()');
-    var photo1 = document.getElementById("picture");
-    photo1.removeAttribute("src");
-    photo1.setAttribute("src", "download.jpg")
-
-    //document.getElementbyId("myImg").src = "download.jpg";
-  // See:
-  // - https://www.tutorialrepublic.com/javascript-tutorial/javascript-dom-get-set-attributes.php
-  // - https://www.w3schools.com/jsref/met_element_setattribute.asp
-}
-
-/*Return to*/function changeCodeStatus() {
-  console.log('Called changeCodeStatus()');
-  let codeStat = document.getElementById("codestatus");
-  codeStat.remove();
-  var meme1 = document.createElement("IMG");
-  meme1.setAttribute("src","9e7da1c68e857f266a23d7d1a92d0bb0.jpg");
-  meme1.setAttribute("width", "304");
-  meme1.setAttribute("height", "228");
-  meme1.setAttribute("alt", "You Can Do It! meme");
-  document.body.appendChild(meme1); //not body, but what am I appending this to?
-
-  // 1. Get a reference to <div id="codestatus">
-  // 2. Create image element containing a sweet ol' meme
-  // 3. Replace text in codestatus w/ image
 }
 
 // Get a reference to the button w/ id="show-info-button"
