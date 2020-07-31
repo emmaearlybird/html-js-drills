@@ -25,6 +25,7 @@ function addFavoriteThings() {
   li.innerText = 'honored elders';
   favElement.appendChild(lii);
   lii.innerText='respectful children';
+  addFavoriteThings.called = true;
 }
 
 let showInfoButton = document.querySelector('#show-info-button');
@@ -155,14 +156,15 @@ let timerId = setInterval(() => console.log("I Am Dirk"), 5000);
 
 /****************************************
  * Section 6 - Your own section!        *
- ****************************************
- *
- * Description:
- *   Add your own section to this page with its own event listeners.
- *   Use a JavaScript event listener that is new to you.
- *   Here is a handy list: https://developer.mozilla.org/en-US/docs/Web/Events
- *   Click on each event listener to see an example of how it is used
- *
- */
+ ****************************************/
 
-// Your code goes here
+function rollover(my_image){
+        my_image.src = 'http://1000misspenthours.com/posters/postersn-z/satanexultant.jpg';
+    }
+
+  function mouseaway(my_image){
+        if (addFavoriteThings.called)
+          my_image.src = "download.jpg";
+        else
+          my_image.src = "download-1.jpg";
+    }
