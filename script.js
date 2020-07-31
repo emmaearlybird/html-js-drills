@@ -10,17 +10,13 @@ function addName() {
 
 function replaceImage() {
   console.log('Called replaceImage()');
-  var photo1 = document.getElementById("picture");
-  photo1.removeAttribute("src");
-  photo1.setAttribute("src", "download.jpg")
+  let newImage = document.querySelector('#picture');
+  newImage.src = "download.jpg";
 }
 
 function changeCodeStatus() {
-  console.log('Called changeCodeStatus()');
-  let codeStat = document.getElementById("codestatus");
-  codeStat.innerHTML = "<img src='https://i.pinimg.com/originals/4d/7e/e3/4d7ee3fc125a8e5423c16cec50a2a6eb.png' />"
-  codeStat.resize(50, 50);
-  codeStat.setAttribute("alt", "You Can Do It! meme");
+  let nameElement = document.querySelector('#codestatus');
+  nameElement.innerHTML = "<img src='https://i.pinimg.com/originals/4d/7e/e3/4d7ee3fc125a8e5423c16cec50a2a6eb.png' />";
 }
 
 /*return to this */function addFavoriteThings() {
@@ -44,11 +40,8 @@ function changeCodeStatus() {
 // Get a reference to the button w/ id="show-info-button"
 let showInfoButton = document.querySelector('#show-info-button');
 
-// Do something when showInfoButton is clicked
 showInfoButton.addEventListener('click', function() {
   console.log('Clicked "Show Info" button');
-
-  // Implement addName, addFavoriteThings, replaceImage, changeCodeStatus above
 
   addName();
   addFavoriteThings();
@@ -58,39 +51,42 @@ showInfoButton.addEventListener('click', function() {
 
 /**********************************
  * Section 2 - Reading From Forms *
- **********************************
- *
- * Description:
- *   Change the code below to populate the section on the right-hand
- *   side of the page with the data entered into the form.
- *
- */
-
-// Get a reference to form w/ id="information-form"
+ **********************************/
 let informationForm = document.querySelector('#information-form');
 
-// Do something when form is submitted
-/*RETURN TO THIS */informationForm.addEventListener('submit', function(event) {
-  var formInfo1 = document.getElementById("information-form"); //gathers info form HTML form
-  var name1 = formInfo1.elements["fname"].value; // value = name1
-  document.getElementbyId().innerHTML = name1;
+informationForm.addEventListener('submit', function(event) {
+  event.preventDefault();
 
-  //document.getElementById("demo").innerHTML = name1;
+let fname = document.getElementById('fname').value;
+let lname = document.getElementById('lname').value;
+let cars = document.getElementById('cars').value;
+let icecreamyes = document.getElementById('icecreamyes').checked;
+let human = document.getElementById('humancheck').checked;
+let coder = document.getElementById('codercheck').checked;
 
-  //append to end of label? I DON'T UNDERSTAND
-  console.log(name1);
+document.getElementById('firstname').innerText = fname;
+document.getElementById('lastname').innerText = lname;
+document.getElementById('chosencar').innerText = cars;
 
-  //label.appendChild(name);
-  event.preventDefault(); // You will want this here. Remove it and see what changes.
+if(icecreamyes) {
+  document.getElementById('icecreamstatus').innerText = 'Yes';
+}
+else {
+  document.getElementById('icecreamstatus').innerText = 'No';
+}
 
-  console.log('Form submitted');
+if(human) {
+  if(coder) {
+        document.getElementById('checks').innerText = 'Human, Coder';
+  }
+  else {
+    document.getElementById('checks').innerText = 'Human';
+  }
+}
+else if(coder) {
+      document.getElementById('checks').innerText = 'Coder';
+}
 
-  // Your job:
-  //   1. Get information typed into the form
-  //   2. Display that info in "Display that info here" section
-
-  // Google things like:
-  //   javascript form element get values
 });
 
 /*************************************
