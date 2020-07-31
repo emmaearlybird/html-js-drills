@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +8,6 @@
     integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
   <main>
     <header>
@@ -113,23 +111,27 @@
           <div class="form-group">
             <label for="todo" class="form-check-label">What do you need to do today?</label>
             <input type="text" class="form-control" id="todo" placeholder="Go grocery shopping">
+            <button onclick="makeToDoList()" type="submit" class="btn btn-primary">Add to To Do List</button>
           </div>
-          <button type="submit" class="btn btn-primary">Add to To Do List</button>
-        </form>
 
+        </form>
       </div>
+
       <div>
         <div class="title"> To Dos</div>
         <ul id="todos">
-          <li>I need to do something!</li>
+          <li id = toDoOne>I need to do something!</li>
         </ul>
       </div>
     </div>
+
     <div class="container">
       <div>
+
         <div class="title">SetTimeout Vs Set Interval</div>
         Here's my second counter: <span id="seconds"></span>
       </div>
+
       <div>
         Here's my delayed display:<div id="delayedDisplay"></div>
       </div>
@@ -139,4 +141,4 @@
   <script src="script.js"></script>
 </body>
 
-</html>
+<body>

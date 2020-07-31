@@ -108,11 +108,6 @@ document.addEventListener('keydown', function() {
   }
 });
 
-
-
-
-
-
 /*************************************
  * Section 4 - TODO List             *
  *************************************
