@@ -151,6 +151,8 @@ function pad(val) {
   }
 }
 
+let timerId = setInterval(() => console.log("I Am Dirk"), 5000);
+
 /****************************************
  * Section 6 - Your own section!        *
  ****************************************
