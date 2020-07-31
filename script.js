@@ -17,23 +17,16 @@ function changeCodeStatus() {
   nameElement.innerHTML = "<img src='https://i.pinimg.com/originals/4d/7e/e3/4d7ee3fc125a8e5423c16cec50a2a6eb.png' />";
 }
 
-/*return to this */function addFavoriteThings() {
-  let nameElement = document.querySelector('#favthings');
-  nameElement.textContent = 'Square-rim glasses';
-  nameElement.textContent = 'The Aeneid';
-  nameElement.textContent = 'White bread';
-
-  // 1. Get a reference to <ul id="favthings">
-  // 2. Create a few list items representing your favorite things
-  // 3. Add them to append them to favthings
-
-  // See:
-  //   - https://htmldog.com/guides/javascript/advanced/creatingelements/
-  //   - https://www.javascripttutorial.net/javascript-dom/javascript-createelement/
-  //   - https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement
+let favElement = document.querySelector('#favthings');
+  let li = document.createElement('li');
+  let lii = document.createElement('li');
+function addFavoriteThings() {
+  favElement.appendChild(li);
+  li.innerText = 'honored elders';
+  favElement.appendChild(lii);
+  lii.innerText='respectful children';
 }
 
-// Get a reference to the button w/ id="show-info-button"
 let showInfoButton = document.querySelector('#show-info-button');
 
 showInfoButton.addEventListener('click', function() {
@@ -110,39 +103,53 @@ document.addEventListener('keydown', function() {
 
 /*************************************
  * Section 4 - TODO List             *
- *************************************
- *
- * Description:
- *   Build a simple TODO list.
- *
- *   For this you will need to have a listener on the submit form and add
- *   anything entered into the text box to the to do list on the right side.
- *
- * Bonus:
- *   Add a delete button next to each item and allow it to delete the item
- *   it is next to.
- */
+ *************************************/
 
-// Your code goes here
+function makeToDoList() {
+  let li = document.createElement("li");
+  let inputValue = document.getElementById("todo").value;
+  let t = document.createTextNode(inputValue);
+  let placeHolder = document.getElementById("toDoOne")
+  li.appendChild(t);
+  if (inputValue === '') {
+    alert("I'm sure there's something you can do.");
+  } else {
+    document.getElementById("todos").appendChild(li);
+  }
+  document.getElementById("todo").value = "";
+
+  let span = document.createElement("SPAN");
+  li.appendChild(span);
+
+  for (i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+      let div = this.parentElement;
+      div.style.display = "none";
+    }
+  }
+}
 
 /****************************************
  * Section 5 - setInterval + setTimeout *
- ****************************************
- *
- * Description:
- *   Use the setInterval function to create a counter that counts every
- *   second on the page (Should look kind of like a stopwatch counting up).
- *   Display this in the span with the id of 'seconds'.
- *
- *   Then use the SetTimeout function to display something (your choice) to the
- *   div with the id 'delayedDisplay' after 5 seconds have passed.
- *
- * Resources:
- *   - https://javascript.info/settimeout-setinterval
- *
- */
+ ****************************************/
 
-// Your code goes here
+let secondsLabel = document.getElementById("seconds");
+let totalSeconds = 0;
+setInterval(setTime, 1000);
+
+function setTime() {
+  ++totalSeconds;
+  secondsLabel.innerHTML = pad(totalSeconds);
+}
+
+function pad(val) {
+  let valString = val + "";
+  if (valString.length < 2) {
+    return "0" + valString;
+  } else {
+    return valString;
+  }
+}
 
 /****************************************
  * Section 6 - Your own section!        *
