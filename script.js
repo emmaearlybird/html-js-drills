@@ -99,24 +99,19 @@ makeBlueButton.addEventListener('click', function() {
   document.getElementById('colorText').style.color = "blue";
 });
 
-
-
-
-
-
-// Adding an event listener to document means the "keydown" event
-// can happen anywhere on the page and we'll respond.
-document.addeventListener('keydown', function() {
-  // This is called whenever a user pressed any key.
-
-  // Your job:
-  //  1. Turn colorText red whenever a user presses the 'r' key
-  //  2. Add your own keybind somewhere
-
-  // See:
-  // - https://developer.mozilla.org/en-US/docs/Web/API/Document/keydown_event
-  // - https://javascript.info/keyboard-events
+document.addEventListener('keydown', function() {
+  if(event.code == 'KeyR') {
+    document.getElementById("colorText").style.color = '#FF0000';
+  }
+  if(event.code == "KeyE") {
+    document.getElementById("colorText").style.color = '#eb34e8';
+  }
 });
+
+
+
+
+
 
 /*************************************
  * Section 4 - TODO List             *
