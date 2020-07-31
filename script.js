@@ -3,13 +3,11 @@
  *****************************
  */
 function addName() {
-  console.log('Called addName()');
   let nameElement = document.querySelector('#name');
   nameElement.innerText = 'still Dirk';
 }
 
 function replaceImage() {
-  console.log('Called replaceImage()');
   let newImage = document.querySelector('#picture');
   newImage.src = "download.jpg";
 }
@@ -20,8 +18,6 @@ function changeCodeStatus() {
 }
 
 /*return to this */function addFavoriteThings() {
-  console.log('Called addFavoriteThings()');
-
   let nameElement = document.querySelector('#favthings');
   nameElement.textContent = 'Square-rim glasses';
   nameElement.textContent = 'The Aeneid';
@@ -91,30 +87,22 @@ else if(coder) {
 
 /*************************************
  * Section 3 - Clicks and Keypresses *
- *************************************
- *
- * Description:
- *   Make the buttons in section 3 of index.html behave as described below.
- *
- */
+ *************************************/
+let consoleLogButton = document.querySelector('#console-log-button');
 
-// When a user clicks "Click me to log something to the console"
-// then log something to the console
-
-// Fill in ________ to get a reference to the correct button on the page WHAT DOES THIS EVEN MEAN?
-let consoleLogButton = document.querySelector('#________');
-
-// Log something when that button is clicked
-/*consoleLogButton.addEventListener('click', function() {
-  console.log('Change this text if you want!');
-});*/
-
-let makeBlueButton = document.querySelector('#________');
-makeBlueButton.addEventListener('click', function() {
-  // Your job:
-  //  1. When a user clicks "Change the text to the right blue"
-  //  2. Change the text in <div id="colorText">...</div> to blue
+consoleLogButton.addEventListener('click', function() {
+  console.log('Okay');
 });
+
+let makeBlueButton = document.querySelector('#make-blue-button');
+makeBlueButton.addEventListener('click', function() {
+  document.getElementById('colorText').style.color = "blue";
+});
+
+
+
+
+
 
 // Adding an event listener to document means the "keydown" event
 // can happen anywhere on the page and we'll respond.
